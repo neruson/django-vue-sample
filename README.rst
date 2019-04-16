@@ -68,7 +68,13 @@ Moved to `Live reloading and SASS compilation`_.
 .. _`Live reloading and SASS compilation`: http://cookiecutter-django.readthedocs.io/en/latest/live-reloading-and-sass-compilation.html
 
 
+Sentry
+^^^^^^
 
+Sentry is an error logging aggregator service. You can sign up for a free account at  https://sentry.io/signup/?code=cookiecutter  or download and host it yourself.
+The system is setup with reasonable defaults, including 404 logging and integration with the WSGI application.
+
+You must set the DSN url in production.
 
 
 Deployment
@@ -86,4 +92,19 @@ See detailed `cookiecutter-django Docker documentation`_.
 .. _`cookiecutter-django Docker documentation`: http://cookiecutter-django.readthedocs.io/en/latest/deployment-with-docker.html
 
 
+Deploying on Digital Ocean
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+#. Create a Digital Ocean droplet.
+#. On the droplet, create an SSH key with ``ssh-keygen``.
+#. In GitHub, create a deploy key. Paste the droplet's public key (found at
+   ``~/.ssh/id_rsa.pub``).
+#. On the droplet, git clone the repo.
+#. Install Docker_ and `Docker Compose`_.
+#. Run ``docker-compose -f production.yml up``.
+#. In your DNS provider, create an A record pointing to the IP address of your
+   droplet. A Let's Encrypt certificate will be automatically created via the
+   ACME protocol.
+
+.. _Docker: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
+.. _`Docker Compose`: https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04
