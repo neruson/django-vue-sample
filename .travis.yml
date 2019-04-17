@@ -3,5 +3,8 @@ sudo: true
 services:
   - docker
 
+env:
+  - COMPOSE_FILE=local.yml
+
 script:
   - "docker-compose run django pytest"
