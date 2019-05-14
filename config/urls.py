@@ -17,7 +17,7 @@ urlpatterns = [
     path("users/", include("django_vue_sample.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
-    path("api/risks/", include("risks.urls")),
+    path("api/risks/", include("django_vue_sample.risks.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
