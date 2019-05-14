@@ -71,6 +71,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "django_vue_sample.users.apps.UsersAppConfig",
     # Your stuff: custom apps go here
+    "django_vue_sample.risks.apps.RisksConfig",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

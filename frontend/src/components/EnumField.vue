@@ -1,17 +1,14 @@
 <template>
-  <select
-    v-bind:value="value"
-    v-on:input="$emit('input', $event.target.value)"
-  >
-    <option v-for="choice in choices" v-bind:key="choice">{{ choice }}</option>
+  <select v-bind:value="value" v-on:input="$emit('input', $event.target.value)">
+    <option v-for="option in options" v-bind:key="option.value">{{ option.value }}</option>
   </select>
 </template>
 
 <script>
 export default {
-  'name': 'EnumField',
-  'props': {
-      'choices': Array
-  },
-}
+  name: "EnumField",
+  props: {
+    options: Array
+  }
+};
 </script>

@@ -1,26 +1,22 @@
 <template>
-  <div class="form container-fluid">
-    <CustomField
-      v-for="field in riskType.fields"
-      v-bind:key="field.id"
-      v-bind:field="field"
-    ></CustomField>
+  <div class="card-body">
+    <CustomField v-for="field in riskType.fields" v-bind:key="field.id" v-bind:field="field"></CustomField>
     <input type="submit" value="Submit">
   </div>
 </template>
 
 <script>
-import CustomField from './CustomField.vue'
+import CustomField from "./CustomField.vue";
 
 export default {
-  name: 'RiskTypeForm',
+  name: "RiskTypeForm",
   components: {
-      CustomField
+    CustomField
   },
   props: {
     riskType: Object
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
